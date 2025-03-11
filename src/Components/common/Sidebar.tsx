@@ -42,8 +42,8 @@ const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, toggleSidebar }) => {
   ];
 
   const resourcesMenu = [
-    { id: "1", name: "About Us", href: "/" },
-    { id: "2", name: "Contact Us", href: "/signup/author" },
+    { id: "1", name: "About Us", href: "/pages/AboutUs" },
+    { id: "2", name: "Contact Us", href: "/pages/ContactUs" },
   ];
 
   const categoryMenu = [
