@@ -1,12 +1,12 @@
-import Home from '@/Components/Home/home'
+import Aboutus from '@/Components/AboutUs/aboutUs'
+
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-      
-      <Home/>
-      
+        
+        <Aboutus/>
     </div>
   )
 }
