@@ -93,13 +93,14 @@ const Readinglists: React.FC<ReadingListsProps> = ({ selectedCategory }) => {
               <div className="flex items-center justify-center mt-4">
                 {book.coverImage ? (
                   <Image
-                  src={`${BASE_URL}/uploads/covers/${book.coverImage.replace(/\\/g, '/')}`} 
-                    width={100}
-                    height={100}
-                    alt={book.title}
-                    className="rounded-md object-cover w-full h-full"
-                    priority
-                  />
+                  src={`${BASE_URL}/uploads/covers/${book.coverImage}`}  
+                  width={100}
+                  height={100}
+                  alt={book.title}
+                  className="rounded-md object-cover w-full h-full"
+                  priority
+                />
+                   
                 ) : (
                   <div className="w-full h-[150px] flex items-center justify-center bg-gray-200 text-gray-500 rounded-md">
                     No Image Available
