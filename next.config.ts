@@ -1,6 +1,6 @@
 const nextConfig = {
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'bookscapebackend-production.up.railway.app'],
   },
 }
 
