@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/Components/common/Header";
 import Footer from "@/Components/common/Footer";
-import ClientLayout from "@/Components/common/ClientLayout"; // Import ClientLayout
 import "./globals.css";
 import Providers from "./Redux/provider"; // Make sure you have your Providers component
 
@@ -22,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
@@ -30,7 +29,7 @@ export default function RootLayout({
         {/* Wrap the entire layout with Providers to make the Redux store available */}
         <Providers>
           <Header />
-          <ClientLayout>{children}</ClientLayout> {/* Wrap with ClientLayout */}
+
           <Footer />
         </Providers>
       </body>
