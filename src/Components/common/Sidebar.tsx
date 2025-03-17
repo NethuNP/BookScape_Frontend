@@ -18,7 +18,7 @@ const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, toggleSidebar }) => {
     {
       id: "1",
       name: "Reading List",
-      href: "/pages/Ebooks",
+      href: "/pages/ReadingList",
       icon: (
         <CiHeart className="w-[16px] h-[16px] md:w-[24px] md:h-[24px] mr-2" />
       ),
