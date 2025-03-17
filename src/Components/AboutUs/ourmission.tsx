@@ -46,13 +46,13 @@ const Ourmission = () => {
           {card.map((item, index) => (
             <div
               key={index}
-              className="w-full h-[196px] md:w-full md:h-[196px] p-4 bg-[#ECF9FF] rounded-lg shadow-md flex flex-col items-start justify-center text-start"
+              className="w-full h-[196px] md:w-full md:h-[196px] p-4 bg-[#ECF9FF] dark:bg-gray-900 rounded-lg shadow-md flex flex-col items-start justify-center text-start"
             >
               <div className="mb-4">{item.icon}</div>
               <div className="text-[20px] md:text-[20px] font-semibold ">
                 {item.topic}
               </div>
-              <div className="text-[16px] md:text-[16px] text-gray-700">
+              <div className="text-[16px] md:text-[16px] text-gray-700 dark:text-gray-400">
                 {item.sub}
               </div>
             </div>

@@ -25,7 +25,7 @@ const Header = () => {
   const toggleResources = useCallback(() => setIsOpen(prev => !prev), []);
 
   return (
-    <div className="relative flex items-center justify-between px-4 py-4 md:px-16 bg-[#FBFBFB] dark:[bg-gray-800 text-white]">
+    <div className="relative flex items-center justify-between px-4 py-4 md:px-16 bg-[#FBFBFB] dark:bg-gray-800 dark:[bg-gray-800 text-white]">
       {/* Sidebar button */}
       <button className="md:hidden text-2xl cursor-pointer" onClick={toggleSidebar}>
         <FaBarsStaggered />
@@ -50,17 +50,17 @@ const Header = () => {
 
       {/* Dropdown for resources */}
       <div className="relative">
-        <button onClick={toggleResources} className="text-black px-4 py-2 bg-[#FBFBFB] rounded-md md:block hidden">
+        <button onClick={toggleResources} className="text-black px-4 py-2 bg-[#FBFBFB] dark:bg-gray-900 dark:text-white rounded-md md:block hidden">
           Resources ▼
         </button>
 
         {isOpen && (
-          <div className="absolute left-0 mt-2 w-48 bg-white border rounded-md">
+          <div className="absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 dark:text-white border rounded-md">
             <ul className="py-2 text-gray-800">
-              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+              <li className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 dark:text-white cursor-pointer">
                 <Link href="/pages/AboutUs">About Us</Link>
               </li>
-              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+              <li className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 dark:text-white   cursor-pointer">
                 <Link href="/pages/ContactUs">Contact Us</Link>
               </li>
             </ul>
@@ -102,7 +102,7 @@ const Header = () => {
       {/* Authentication buttons */}
       <div className="hidden md:flex gap-4">
         <Link href="/login">
-          <button className="text-black w-[123px] h-[48px] bg-[#FBFBFB] border rounded-md">
+          <button className="text-black w-[123px] h-[48px] bg-[#FBFBFB] dark:bg-gray-900 dark:text-white border rounded-md">
             Sign in
           </button>
         </Link>

@@ -62,13 +62,13 @@ const Home1 = () => {
             </div>
 
             <div className="flex flex-col">
-              <span className="text-black text-[16px] md:text-[20px] font-semibold">
+              <span className="text-black dark:text-white text-[16px] md:text-[20px] font-semibold">
                 {book.title}
               </span>
-              <span className="md:font-[16px] text-[#18181899] font-medium">
+              <span className="md:font-[16px] text-[#18181899] dark:text-gray-400 font-medium">
                 {book.author}
               </span>
-              <button className="w-[83px] h-[31px] border border-[#0D47A1] text-[12px] text-[#0D47A1] rounded-lg mt-6">
+              <button className="w-[83px] h-[31px] border border-[#0D47A1] dark:border-gray-400 dark:text-white text-[12px] text-[#0D47A1] rounded-lg mt-6">
                 Read Now
               </button>
             </div>

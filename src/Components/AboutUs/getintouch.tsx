@@ -5,7 +5,7 @@ import books from "../../../public/images/Home/Bookset.png";
 const Getintouch = () => {
   return (
     <div className="md:mx-24 mx-2">
-      <div className="w-full md:h-[353px] h-[163px] bg-[#D5EFFF] md:mt-16 mt-10 flex items-center justify-center">
+      <div className="w-full md:h-[353px] h-[163px] bg-[#D5EFFF] dark:bg-gray-900 md:mt-16 mt-10 flex items-center justify-center">
         <div className="grid grid-cols-4 md:grid-cols-4 w-full">
           <div className="col-span-2 flex flex-col items-start ml-4 justify-start md:items-start md:justify-center md:ml-10">
             <div className="text-[18px] md:text-[48px] font-semibold text-start md:text-start">

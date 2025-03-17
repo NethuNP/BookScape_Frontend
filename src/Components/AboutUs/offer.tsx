@@ -14,7 +14,7 @@ const Offer = () => {
 
         <div className="md:col-span-2 space-y-4 mt-4">
           <div className="flex items-center space-x-4 mt-4">
-            <div className="bg-[#D5EFFF] md:w-[48px] md:h-[48px] w-[24px] h-[24px] rounded-full flex justify-center items-center">
+            <div className="bg-[#D5EFFF] dark:bg-gray-900 md:w-[48px] md:h-[48px] w-[24px] h-[24px] rounded-full flex justify-center items-center">
               <FaCheck className="md:w-[24px] md:h-[24px] w-[14px] h-[12px]" />
             </div>
             <div className="text-[14px] md:text-[20px] font-medium">
@@ -27,7 +27,7 @@ const Offer = () => {
           </div>
 
           <div className="flex items-center space-x-4">
-            <div className="bg-[#D5EFFF] md:w-[48px] md:h-[48px] w-[24px] h-[24px] rounded-full flex justify-center items-center">
+            <div className="bg-[#D5EFFF] dark:bg-gray-900 md:w-[48px] md:h-[48px] w-[24px] h-[24px] rounded-full flex justify-center items-center">
               <FaCheck className="md:w-[24px] md:h-[24px] w-[14px] h-[12px] " />
             </div>
             <div className="text-[14px] md:text-[20px] font-medium">
@@ -38,7 +38,7 @@ const Offer = () => {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <div className="bg-[#D5EFFF] md:w-[48px] md:h-[48px] w-[24px] h-[24px] rounded-full flex justify-center items-center ">
+            <div className="bg-[#D5EFFF] dark:bg-gray-900 md:w-[48px] md:h-[48px] w-[24px] h-[24px] rounded-full flex justify-center items-center ">
               <FaCheck className="md:w-[24px] md:h-[24px] w-[14px] h-[12px]" />
             </div>
             <div className="text-[14px] md:text-[20px] font-medium">

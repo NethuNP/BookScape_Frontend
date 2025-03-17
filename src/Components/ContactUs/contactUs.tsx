@@ -18,7 +18,7 @@ const Contactus = () => {
           <div>
             <label
               htmlFor="full-name"
-              className="block text-sm font-medium text-gray-700 mb-2  text-[12px] md:text-[16px]"
+              className="block text-sm font-medium text-gray-700 dark:text-white mb-2  text-[12px] md:text-[16px]"
             >
               Full Name
             </label>
@@ -33,7 +33,7 @@ const Contactus = () => {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700 mb-2  text-[12px] md:text-[16px]"
+              className="block text-sm font-medium text-gray-700 dark:text-white mb-2  text-[12px] md:text-[16px]"
             >
               Email
             </label>
@@ -47,7 +47,7 @@ const Contactus = () => {
           <div>
             <label
               htmlFor="subject"
-              className="block text-sm font-medium text-gray-700 mb-2  text-[12px] md:text-[16px]"
+              className="block text-sm font-medium text-gray-700 dark:text-white mb-2  text-[12px] md:text-[16px]"
             >
               Subject
             </label>
@@ -62,7 +62,7 @@ const Contactus = () => {
           <div>
             <label
               htmlFor="message"
-              className="block text-sm font-medium text-gray-700 mb-2 text-[12px] md:text-[16px]"
+              className="block text-sm font-medium text-gray-700 dark:text-white mb-2 text-[12px] md:text-[16px]"
             >
               Message
             </label>

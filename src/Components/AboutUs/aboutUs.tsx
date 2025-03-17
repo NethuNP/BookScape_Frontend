@@ -7,7 +7,7 @@ import Getintouch from "./getintouch";
 
 const Aboutus = () => {
   return (
-    <div>
+    <div className="dark:bg-gray-800 dark:text-white bg-[#F3F4F6] ">
       <div className="md:mx-24 mx-2">
         <div className="text-[24px] font-semibold md:text-[48px] ">
           About Us

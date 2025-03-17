@@ -40,13 +40,13 @@ const Home2 = () => {
           <div className="text-[24px] md:text-[48px] font-semibold">
             Enjoy Free E-Books? Unlock Everything!
           </div>
-          <div className="text-[16px] md:text-[20px] font-medium text-[#181818B2]">
+          <div className="text-[16px] md:text-[20px] font-medium text-[#181818B2] dark:text-gray-400">
             Our Library, Unlimited & Unlocked
           </div>
 
           {headings.map((heading) => (
             <div key={heading.id} className="flex items-center gap-4 mt-4">
-              <div className="bg-[#D5EFFF] rounded-full p-4 text-2xl w-[48px] h-[48px]  flex items-center justify-center">
+              <div className="bg-[#D5EFFF] dark:bg-gray-900 rounded-full p-4 text-2xl w-[48px] h-[48px]  flex items-center justify-center">
                 {heading.icon}
               </div>
               <div className="text-[14px] md:text-[20px] font-medium">
@@ -56,7 +56,7 @@ const Home2 = () => {
           ))}
         </div>
       </div>
-      <div className="mt-16 grid grid-cols-2 md:grid-cols-2 gap-4 bg-[#D5EFFF] w-full h-full">
+      <div className="mt-16 grid grid-cols-2 md:grid-cols-2 gap-4 bg-[#D5EFFF] dark:bg-gray-900  w-full h-full">
         <div className="flex flex-col items-center justify-center">
           <div className="text-[18px] md:text-[48px] md:px-10 px-2 mb-4">
             Join Today & Unlock Endless Knowledge!

@@ -63,7 +63,7 @@ const Readinglists: React.FC<ReadingListsProps> = ({ selectedCategory }) => {
   if (isError) return <div className="text-center text-red-500 mt-6">Error loading books</div>;
 
   return (
-    <div className="bg-[#FBFBFB] lg:mx-24 md:mx-6 mx-2">
+    <div className="bg-[#FBFBFB] dark:text-white dark:bg-gray-900 lg:mx-24 md:mx-6 mx-2">
       {/* Books Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-2 md:gap-4 gap-2">
         {currentBooks.length > 0 ? (
@@ -105,7 +105,7 @@ const Readinglists: React.FC<ReadingListsProps> = ({ selectedCategory }) => {
             </div>
           ))
         ) : (
-          <div className="text-center text-gray-500 mt-6">No books found in this category.</div>
+          <div className="text-center text-gray-500 mt-6 dark:text-gray-400">No books found in this category.</div>
         )}
       </div>
 

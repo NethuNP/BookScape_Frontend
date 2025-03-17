@@ -1,12 +1,13 @@
-import BooksList from '@/Components/BookList/bookList'
-import React from 'react'
+import { Suspense } from "react";
+import BookList from "@/Components/BookList/bookList"; // Ensure correct import
+
 
 const page = () => {
   return (
-    <div>
-        <BooksList/>
-    </div>
-  )
-}
+    <Suspense fallback={<p>Loading books...</p>}>
+      <BookList />
+    </Suspense>
+  );
+};
 
-export default page
+export default page;
