@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Header from "@/Components/common/Header"; // Ensure correct import path
-import Footer from "@/Components/common/Footer"; // Ensure correct import path
+import Header from "@/Components/common/Header";
+import Footer from "@/Components/common/Footer";
+import ClientLayout from "@/Components/common/ClientLayout"; // Import ClientLayout
 import "./globals.css";
+import Providers from "./Redux/provider"; // Make sure you have your Providers component
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,15 +23,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Header /> {/* Added Header */}
-        <main>{children}</main> {/* Wrapped children inside <main> */}
-        <Footer /> {/* Added Footer */}
+        {/* Wrap the entire layout with Providers to make the Redux store available */}
+        <Providers>
+          <Header />
+          <ClientLayout>{children}</ClientLayout> {/* Wrap with ClientLayout */}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

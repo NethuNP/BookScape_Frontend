@@ -14,7 +14,7 @@ const Header = () => {
 
  
   const dropdownItems = useMemo(() => [
-    { id: "1", name: "Reading List", route: "/pages/Ebooks", icon: <CiHeart className="w-5 h-5 mr-2" /> },
+    { id: "1", name: "Reading List", route: "/pages/ReadingList", icon: <CiHeart className="w-5 h-5 mr-2" /> },
     { id: "2", name: "Your Accounts", route: "/", icon: <CiSettings className="w-5 h-5 mr-2" /> },
     { id: "3", name: "Sign out", route: "/", icon: <MdOutlineLogout className="w-5 h-5 mr-2" /> },
   ], []);
@@ -25,7 +25,7 @@ const Header = () => {
   const toggleResources = useCallback(() => setIsOpen(prev => !prev), []);
 
   return (
-    <div className="relative flex items-center justify-between px-4 py-4 md:px-16 bg-[#FBFBFB]">
+    <div className="relative flex items-center justify-between px-4 py-4 md:px-16 bg-[#FBFBFB] dark:[bg-gray-800 text-white]">
       {/* Sidebar button */}
       <button className="md:hidden text-2xl cursor-pointer" onClick={toggleSidebar}>
         <FaBarsStaggered />
@@ -35,9 +35,10 @@ const Header = () => {
       <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
 
       {/* Logo */}
+      <div className="flex items-end justify-end">
       <Link href="/" className="md:text-2xl text-xl font-bold">
         BookScape
-      </Link>
+      </Link></div>
 
       {/* Search bar  */}
       <div className="hidden md:flex items-center w-[519px] border-2 rounded-md">
@@ -73,7 +74,7 @@ const Header = () => {
           Switch to Publisher
         </button>
 
-        <div className="relative cursor-pointer" onClick={toggleDropdown}>
+        <div className="relative cursor-pointer hidden md:block" onClick={toggleDropdown}>
           <Image
             src="/Icons/user.png"
             alt="user"
