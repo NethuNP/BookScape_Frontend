@@ -93,7 +93,7 @@ const Readinglists: React.FC<ReadingListsProps> = ({ selectedCategory }) => {
               <div className="flex items-center justify-center mt-4">
                 {book.coverImage ? (
                   <Image
-                    src={`${BASE_URL}/${book.coverImage}`}
+                  src={`${BASE_URL}${book.coverImage}`} 
                     width={100}
                     height={100}
                     alt={book.title}
