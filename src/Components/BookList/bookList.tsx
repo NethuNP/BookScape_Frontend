@@ -1,6 +1,7 @@
 "use client";
+
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 
 const books = [
   { id: 1, title: "Book 1", category: "Fiction" },
@@ -10,7 +11,7 @@ const books = [
   { id: 5, title: "Book 5", category: "Special Interest" },
 ];
 
-const BookList = () => {
+const BookListContent = () => {
   const searchParams = useSearchParams();
   const [filteredBooks, setFilteredBooks] = useState(books);
   const [category, setCategory] = useState<string | null>(null);
@@ -40,6 +41,14 @@ const BookList = () => {
         <p className="text-gray-500">No books available in this category.</p>
       )}
     </div>
+  );
+};
+
+const BookList = () => {
+  return (
+    <Suspense fallback={<p>Loading books...</p>}>
+      <BookListContent />
+    </Suspense>
   );
 };
 

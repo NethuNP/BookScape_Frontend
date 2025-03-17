@@ -1,9 +1,17 @@
-import React from 'react'
+"use client";
 
-const ClientLayout = () => {
+import React from "react";
+import CategoryBar from "./CategoryBar";
+
+const ClientLayout = ({ children }: { children: React.ReactNode }) => {
+ 
+
   return (
-    <div>ClientLayout</div>
-  )
-}
+    <div>
+      <CategoryBar/>
+      {children}
+    </div>
+  );
+};
 
-export default ClientLayout
+export default ClientLayout;
