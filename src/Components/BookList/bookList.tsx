@@ -2,12 +2,13 @@
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
+
 const books = [
-  { id: 1, title: "Book 1", category: "Fiction" },
-  { id: 2, title: "Book 2", category: "Non-Fiction" },
-  { id: 3, title: "Book 3", category: "Educational" },
-  { id: 4, title: "Book 4", category: "Children’s Books" },
-  { id: 5, title: "Book 5", category: "Special Interest" },
+  { id: 1, title: "Book 1", genre: "Fiction" },
+  { id: 2, title: "Book 2", genre: "Non-Fiction" },
+  { id: 3, title: "Book 3", genre: "Educational" },
+  { id: 4, title: "Book 4", genre: "Children’s Books" },
+  { id: 5, title: "Book 5", genre: "Special Interest" },
 ];
 
 const BookList = () => {
@@ -19,7 +20,7 @@ const BookList = () => {
     const currentCategory = searchParams.get("category");
     setCategory(currentCategory);
     if (currentCategory) {
-      setFilteredBooks(books.filter((book) => book.category === currentCategory));
+      setFilteredBooks(books.filter((book) => book.genre === currentCategory));
     } else {
       setFilteredBooks(books);
     }

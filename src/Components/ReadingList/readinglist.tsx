@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Readinglists from "./readinglists"; // Ensure it's correctly imported
+import Readinglists from "./readinglists"; 
 
 const categories = [
-  { id: 1, name: "EBook" },
+  { id: 1, name: "Ebook" },
   { id: 2, name: "Audio" },
   { id: 3, name: "Video" },
 ];
@@ -12,7 +12,7 @@ const categories = [
 const ReadingList = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const initialCategory = searchParams.get("category") || "EBook";
+  const initialCategory = searchParams.get("category") || "Ebook";
   const [selectedCategory, setSelectedCategory] = useState<string>(initialCategory);
 
   useEffect(() => {

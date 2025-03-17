@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Book } from "@/types/types";
 import { BASE_URL } from "@/utils/apiConfig";
 import { useGetBooksQuery } from "@/app/Redux/features/bookSlice";
+import { IoHeartDislikeOutline } from "react-icons/io5";
 
 interface ResponseData {
   books: Book[];
@@ -17,37 +18,34 @@ interface ReadingListsProps {
 
 const Readinglists: React.FC<ReadingListsProps> = ({ selectedCategory }) => {
   const {
-    data:responseData,
+    data: responseData,
     isLoading,
     isError,
   } = useGetBooksQuery<{
-      data: ResponseData | undefined;
-      isLoading: boolean;
-      isError: boolean;
-    }>();
+    data: ResponseData | undefined;
+    isLoading: boolean;
+    isError: boolean;
+  }>();
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const books = responseData?.books || [];
-
-  // Filter books based on selected category and status "Approved"
-  const filteredBooks = books.filter(
-    (book) => book.status === "Approved" && (!selectedCategory || book.format === selectedCategory )
-  );
+  // Filter books by status and selected category (format)
+  const books =
+    responseData?.books.filter(
+      (book) => book.status === "Approved" && book.format === selectedCategory
+    ) ?? [];
 
   // Pagination setup
   const rowsPerPage = 8;
-  const totalPages = Math.max(1, Math.ceil(filteredBooks.length / rowsPerPage));
+  const totalPages = Math.max(1, Math.ceil(books.length / rowsPerPage));
   const indexOfLastRow = currentPage * rowsPerPage;
   const indexOfFirstRow = indexOfLastRow - rowsPerPage;
-  const currentBooks = filteredBooks.slice(indexOfFirstRow, indexOfLastRow);
+  const currentBooks = books.slice(indexOfFirstRow, indexOfLastRow);
 
-  // Reset to first page when category changes
   useEffect(() => {
     setCurrentPage(1);
   }, [selectedCategory]);
 
-  // Ensure page number stays within range
   useEffect(() => {
     if (currentPage > totalPages) {
       setCurrentPage(totalPages);
@@ -59,15 +57,35 @@ const Readinglists: React.FC<ReadingListsProps> = ({ selectedCategory }) => {
   };
 
   // Loading and Error states
-  if (isLoading) return <div className="text-center text-gray-500 mt-6">Loading...</div>;
-  if (isError) return <div className="text-center text-red-500 mt-6">Error loading books</div>;
+  if (isLoading)
+    return <div className="text-center text-gray-500 mt-6">Loading...</div>;
+  if (isError)
+    return (
+      <div className="text-center text-red-500 mt-6">Error loading books</div>
+    );
 
   return (
     <div className="bg-[#FBFBFB] dark:text-white dark:bg-gray-900 lg:mx-24 md:mx-6 mx-2">
+      {currentBooks.length === 0 && (
+        <div className="flex items-center justify-center min-h-screen mt-6">
+          <div className="text-center text-gray-500 dark:text-gray-400">
+            <div className="flex items-center justify-center mb-4">
+              <IoHeartDislikeOutline size={40} />
+            </div>
+            <div className="text-[14px] md:text-[24px]">
+              Oops! Your book list is empty
+            </div>
+            <div className="text-[12px] md:text-[20px]">
+              Add some books to get started!
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Books Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-2 md:gap-4 gap-2">
-        {currentBooks.length > 0 ? (
-          currentBooks.map((book, index) => (
+      {currentBooks.length > 0 && (
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-2 md:gap-4 gap-2">
+          {currentBooks.map((book, index) => (
             <div
               key={index}
               className="md:w-full md:h-full lg:w-[302px] lg:h-full w-full h-full shadow-lg rounded-lg px-4 bg-white mt-6"
@@ -103,11 +121,9 @@ const Readinglists: React.FC<ReadingListsProps> = ({ selectedCategory }) => {
                 <FavoriteHeart />
               </div>
             </div>
-          ))
-        ) : (
-          <div className="text-center text-gray-500 mt-6 dark:text-gray-400">No books found in this category.</div>
-        )}
-      </div>
+          ))}
+        </div>
+      )}
 
       {/* Pagination */}
       {totalPages > 1 && (
@@ -132,5 +148,4 @@ const Readinglists: React.FC<ReadingListsProps> = ({ selectedCategory }) => {
     </div>
   );
 };
-
 export default Readinglists;
